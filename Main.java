@@ -1,70 +1,47 @@
-public class Main
+public class Main 
 {
-   public static void main(String[] args)
-   {
-      Vehicle v1 = new Vehicle("Nissan", "Skyline GT-R V-Spec II", 1994);
-   
-      System.out.println("First Vehicle");   
-      v1.displayInfo();
-      System.out.println("Age: " + v1.calculateAge());
-      System.out.println("Vintage: " + v1.isVintage());
-      System.out.println();
-   
-      Vehicle v2 = new Vehicle("Subaru", "Impreza WRX STi Coupe Type R Version V", 1998);
-      
-      System.out.println("Second Vehicle");
-      v2.displayInfo();
-      System.out.println("Age: " + v2.calculateAge());
-      System.out.println("Vintage: " + v2.isVintage());
-      System.out.println();
-      
-      Vehicle v3 = new Vehicle("Mazda", "Efini RX-7 Type R", 1991);
-      
-      System.out.println("Third Vehicle");
-      v3.displayInfo();
-      System.out.println("Age: " + v3.calculateAge());
-      System.out.println("Vintage: " + v3.isVintage());
-      System.out.println();
-   }
-}
+    public static void printDetails(Vehicle vehicle) {
+        vehicle.displayInfo();
+        System.out.println("Age: " + vehicle.calculateAge());
+        System.out.println("Vintage: " + vehicle.isVintage());
+    }
 
-/*
-public class Main
-{
-   public static void main(String[] args)
-   {
-      Vehicle v1 = new Vehicle();
-      v1.brand = ("Nissan");
-      v1.model = ("Skyline GT-R V-Spec II");
-      v1.year = 1994;
-   
-      System.out.println("First Vehicle");   
-      v1.displayInfo();
-      System.out.println("Age: " + v1.calculateAge());
-      System.out.println("Vintage: " + v1.isVintage());
-      System.out.println();
-   
-      Vehicle v2 = new Vehicle();
-      v2.brand = ("Subaru");
-      v2.model = ("Impreza WRX STi Coupe Type R Version V");
-      v2.year = 1998;
-      
-      System.out.println("Second Vehicle");
-      v2.displayInfo();
-      System.out.println("Age: " + v2.calculateAge());
-      System.out.println("Vintage: " + v2.isVintage());
-      System.out.println();
-      
-      Vehicle v3 = new Vehicle();
-      v3.brand = ("Mazda");
-      v3.model = ("Efini RX-7 Type R");
-      v3.year = 1991;
-      
-      System.out.println("Third Vehicle");
-      v3.displayInfo();
-      System.out.println("Age: " + v3.calculateAge());
-      System.out.println("Vintage: " + v3.isVintage());
-      System.out.println();
-   }
+    public static void main(String[] args) {
+
+        Vehicle vehicle = new Car("Volkswagen", "Type 82 Kübelwagen", 1940, 4);
+        vehicle.displayInfo();
+
+        System.out.println();
+
+        vehicle = new Motorcycle("Zündapp", "KS 750", 1941, "Manual");
+        vehicle.displayInfo();
+
+        System.out.println();
+
+        vehicle = new Truck("Sd.Kfz.", "Sonderkraftfahrzeug 234", 1945, 8);
+        vehicle.displayInfo();
+
+        Car car = new Car("GAZ", "69", 1953, 2);
+        Motorcycle motorcycle = new Motorcycle("Kalashnikov", "Izh-Enduro", 2025, "Automatic");
+        Truck truck = new Truck("Ural", "4320", 1977, 6);
+
+        printDetails(car);
+        System.out.println();
+
+        printDetails(motorcycle);
+        System.out.println();
+
+        printDetails(truck);
+
+        Vehicle[] vehicles = {
+            new Car("Volkswagen", "Type 82 Kübelwagen", 1940, 4),
+            new Motorcycle("Zündapp", "KS 750", 1941, "Manual"),
+            new Truck("Sd.Kfz.", "Sonderkraftfahrzeug 234", 1945, 8)
+        };
+
+        for (Vehicle currentVehicle : vehicles) {
+            printDetails(currentVehicle);
+            System.out.println();
+        }
+    }
 }
-*/
